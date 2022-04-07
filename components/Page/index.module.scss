@@ -1,0 +1,20 @@
+@import '@arcanetechnology/react-ui-lib/lib/vars.scss';
+
+.page {
+  min-height: 100vh;
+
+  .main {
+    min-height: calc(100vh - 136px - 443px);
+    margin: 0 112px;
+    padding-bottom: 200px;
+
+    @media (max-width: $tablet-width) {
+      margin: 0 48px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin: 0 16px;
+      padding-bottom: 88px;
+    }
+  }
+}
