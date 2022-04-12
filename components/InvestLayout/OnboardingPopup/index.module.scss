@@ -1,0 +1,124 @@
+@import '@arcanetechnology/react-ui-lib/lib/vars.scss';
+
+.title {
+  display: flex;
+  align-items: center;
+
+  .text {
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    color: #090A0B;
+
+    @media (max-width: $mobile-width) {
+      margin-left: 8px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+.content {
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #DEE2E6;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 24px;
+  }
+
+  .largeText {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #090A0B;
+
+    @media (max-width: $mobile-width) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .mainText {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #495057;
+  }
+
+  .secondaryText {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #868E96;
+  }
+
+  ul {
+    margin-left: 20px;
+    list-style-type: disc;
+
+    li {
+      margin-top: 4px;
+
+      strong {
+        font-weight: normal;
+        color: #495057;
+      }
+    }
+  }
+
+  .warningBox {
+    margin-top: 16px;
+    height: 164px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 16px;
+    color: #090A0B;
+
+    p {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+.answer {
+  margin-top: 16px;
+  color: #868E96;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 24px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .text {
+    margin-left: 4px;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}

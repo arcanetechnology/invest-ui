@@ -8,4 +8,4 @@ First, run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3042](http://localhost:3042) with your browser to see the result.
+Open [http://localhost:3042/invest](http://localhost:3042/invest) with your browser to see the result.

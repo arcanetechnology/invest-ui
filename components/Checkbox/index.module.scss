@@ -1,0 +1,21 @@
+.checkbox {
+  margin-top: 24px;
+
+  > label {
+    display: flex;
+    align-items: flex-start;
+
+    .labelText {
+      margin-left: 4px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #868E96;
+    }
+
+    > input {
+      margin-top: 2px;
+      border: 1px solid #BFC7CB;
+    }
+  }
+}

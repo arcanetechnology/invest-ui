@@ -1,0 +1,39 @@
+.inputField {
+  margin-top: 24px;
+
+  > label {
+    .labelText {
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #495057;
+    }
+
+    > input {
+      box-sizing: border-box;
+      padding: 0px 8px;
+      height: 48px;
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid #BFC7CB;
+      border-radius: 4px;
+      outline: none;
+
+      &:active,
+      &:focus {
+        border-color: black;
+      }
+
+      &[disabled] {
+        background: #F2F2F2;
+        pointer-events: none;
+
+        &:active,
+        &:focus {
+          border-color: #BFC7CB;
+        }
+      }
+    }
+  }
+}

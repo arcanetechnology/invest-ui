@@ -1,5 +1,7 @@
 import useClientSide from './useClientSide';
+import useScrollToTop from './useScrollToTop';
 
 export {
-  useClientSide
+  useClientSide,
+  useScrollToTop
 };

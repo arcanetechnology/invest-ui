@@ -1,11 +1,26 @@
 import { Button, FeatureList, PageHero, PageSectionWrapper } from '@arcanetechnology/react-ui-lib';
+import { useState } from 'react';
+import Appology from './Appology';
+import FundInfo from './FundInfo';
 import styles from './index.module.scss';
+import OnboardingPopup from './OnboardingPopup';
 
 /**
  * Represents the Invest page layout.
- *
  */
 export default function InvestLayout() {
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [showFundInfo, setShowFundInfo] = useState(false);
+  const [showAppology, setShowAppology] = useState(false);
+
+  if (showFundInfo) {
+    return <FundInfo />;
+  }
+
+  if (showAppology) {
+    return <Appology />;
+  }
+
   return (
     <div className={styles.investLayout}>
       <PageSectionWrapper>
@@ -39,10 +54,17 @@ export default function InvestLayout() {
             ]
           }}
           renderButton={(button) => (
-            <Button arrowRight small>{button.text}</Button>
+            <Button arrowRight small onClick={() => { setShowOnboarding(true); }}>{button.text}</Button>
           )}
         />
       </PageSectionWrapper>
+
+      <OnboardingPopup
+        isOpen={showOnboarding}
+        onClose={() => { setShowOnboarding(false); }}
+        onShowAppology={() => { setShowAppology(true); setShowOnboarding(false); }}
+        onShowFundInfo={() => { setShowFundInfo(true); setShowOnboarding(false); }}
+      />
     </div>
   );
 }
