@@ -13,6 +13,22 @@ const COLLECT_DATA = 'COLLECT_DATA';
 export default function OnboardingPopup({ isOpen, onClose, onShowAppology, onShowFundInfo }) {
   const user = useUser();
 
+  const isUserSignedIn = user.state === AuthProvider.USER_STATE_SIGNED_IN;
+
+  const [step, setStep] = useState(0);
+  const [answer, setAnswer] = useState(null);
+  const answers = useRef([]);
+
+  const [userDataFields, setUserDataFields] = useState({});
+  console.log('userDataFields', userDataFields);
+
+  const onUserDataFieldChange = (name, value) => {
+    setUserDataFields((state) => ({
+      ...state,
+      [name]: value
+    }));
+  };
+
   const STEPS = useMemo(() => ({
     0: {
       name: 'INTRODUCTION_STEP',
@@ -129,21 +145,16 @@ export default function OnboardingPopup({ isOpen, onClose, onShowAppology, onSho
     },
     [COLLECT_DATA]: {
       name: 'COLLECT_DATA',
-      content: <CollectDataStep userEmail={user.data && user.data.email} />
+      content: <CollectDataStep userEmail={user.data && user.data.email} onValueChange={onUserDataFieldChange} />
     }
   }), [user]);
-
-  const isUserSignedIn = user.state === AuthProvider.USER_STATE_SIGNED_IN;
-
-  const [step, setStep] = useState(0);
-  const [answer, setAnswer] = useState(null);
-  const answers = useRef([]);
 
   useEffect(() => {
     if (!isOpen) {
       setStep(0);
       setAnswer(null);
       answers.current = [];
+      setUserDataFields({});
     }
   }, [isOpen]);
 
