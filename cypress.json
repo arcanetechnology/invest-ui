@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://localhost:3042/invest",
+  "integrationFolder": "cypress/integration",
+  "screenshotsFolder": "cypress/screenshots",
+  "video": false,
+  "viewportHeight": 1000
+}

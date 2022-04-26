@@ -38,7 +38,8 @@ export default function InvestLayout() {
                   url: './invest/the-fund.png'
                 },
                 button: {
-                  text: 'Contact Us'
+                  text: 'Contact Us',
+                  testid: 'contact-us-button'
                 }
               },
               {
@@ -54,7 +55,14 @@ export default function InvestLayout() {
             ]
           }}
           renderButton={(button) => (
-            <Button arrowRight small onClick={() => { setShowOnboarding(true); }}>{button.text}</Button>
+            <Button
+              arrowRight
+              small
+              onClick={() => { setShowOnboarding(true); }}
+              data-testid={button.testid}
+            >
+              {button.text}
+            </Button>
           )}
         />
       </PageSectionWrapper>
