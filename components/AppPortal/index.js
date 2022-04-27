@@ -11,7 +11,7 @@ const AppPortal = ({ children }) => {
   const isClientSide = useClientSide();
 
   return isClientSide
-    ? ReactDOM.createPortal(children, document.querySelector('#__next'))
+    ? ReactDOM.createPortal(children, document.querySelector('#__next') || document.createElement('div'))
     : null;
 };
 
