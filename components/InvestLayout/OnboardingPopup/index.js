@@ -1,4 +1,5 @@
 import { AuthProvider, Button, Popup, SignInSignOutButton, useUser } from '@arcanetechnology/react-ui-lib';
+import { isRunningCypress } from 'app/cypress';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import OnboardingChart from 'svg/OnboardingChart';
 import CollectDataStep from './CollectDataStep';
@@ -259,7 +260,7 @@ export default function OnboardingPopup({ isOpen, onClose, onShowAppology, onSho
           Cancel
         </Button>
 
-        {isUserSignedIn ? (
+        {isUserSignedIn || isRunningCypress() ? (
           <Button small onClick={handleContinue} disabled={STEPS[step].requiresYesNo && !answer}>Continue</Button>
         ) : (
           <SignInSignOutButton secondary={false} signInLabel="Sign In to Continue" />

@@ -71,6 +71,7 @@
     "beforeEach": false,
     "cy": false,
     "it": false,
-    "afterEach": false
+    "afterEach": false,
+    "Cypress": false
   }
 }
