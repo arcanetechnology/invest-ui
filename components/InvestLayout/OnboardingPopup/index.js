@@ -227,13 +227,13 @@ export default function OnboardingPopup({ isOpen, onClose, onShowAppology, onSho
         <div className={styles.text}>Investment Onboarding</div>
       </div>
 
-      <div className={styles.content}>
+      <div className={styles.content} data-testid="onboarding-step-content">
         {STEPS[step].content}
       </div>
 
       {STEPS[step].requiresYesNo && (
         <div className={styles.answer}>
-          <label>
+          <label data-testid="answer-yes">
             <input
               type="radio"
               name="answer"
@@ -243,7 +243,7 @@ export default function OnboardingPopup({ isOpen, onClose, onShowAppology, onSho
             <div className={styles.text}>Yes</div>
           </label>
 
-          <label>
+          <label data-testid="answer-no">
             <input
               type="radio"
               name="answer"
@@ -261,7 +261,14 @@ export default function OnboardingPopup({ isOpen, onClose, onShowAppology, onSho
         </Button>
 
         {isUserSignedIn || isRunningCypress() ? (
-          <Button small onClick={handleContinue} disabled={STEPS[step].requiresYesNo && !answer}>Continue</Button>
+          <Button
+            small
+            onClick={handleContinue}
+            disabled={STEPS[step].requiresYesNo && !answer}
+            data-testid="continue-button"
+          >
+            Continue
+          </Button>
         ) : (
           <SignInSignOutButton secondary={false} signInLabel="Sign In to Continue" />
         )}
