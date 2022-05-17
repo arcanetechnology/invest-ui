@@ -12,7 +12,7 @@
     "cy:run": "cypress open"
   },
   "dependencies": {
-    "@arcanetechnology/react-ui-lib": "^1.5.10",
+    "@arcanetechnology/react-ui-lib": "^1.6.0",
     "classnames": "^2.3.1",
     "firebase": "^9.6.10",
     "next": "12.1.4",
